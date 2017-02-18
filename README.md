@@ -1,2 +1,2 @@
-# hw-homebrew-tap
-Homebrew tap
+# homebrew-haskell-works
+Homebrew Haskell-Works
