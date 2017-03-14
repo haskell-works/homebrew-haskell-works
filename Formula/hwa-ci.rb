@@ -7,7 +7,7 @@ class HwaCi < Formula
   homepage "https://github.com/haskell-works/hwa-ci"
   url "https://github.com/haskell-works/hwa-ci/archive/v0.1.0.1.tar.gz"
   sha256 "f9ac84bcdcdad559e44b7fd301bb4437136c2be23f304cd9742b93e623659af6"
-  head "https://github.com/Gabriel439/Haskell-Dhall-JSON-Library"
+  head "https://github.com/haskell-works/hwa-ci"
 
   depends_on "ghc" => :build
   depends_on "cabal-install" => :build
