@@ -16,6 +16,12 @@ class HwaCi < Formula
     install_cabal_package
   end
 
+  bottle do
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/hwa-ci-0.1.0.1"
+    cellar :any_skip_relocation
+    sha256 "b611873018d0cd9c291cc7660391d699c01037fa5d9068ae166e8a7606595568" => :sierra
+  end
+
   test do
     assert_match "hwa-ci 0.1.0.0", pipe_output("#{bin}/hwa-ci version", "", 0)
   end
