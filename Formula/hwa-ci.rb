@@ -17,6 +17,8 @@ class HwaCi < Formula
   end
 
   bottle do
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/hwa-ci-0.1.0.0"
+    cellar :any_skip_relocation
     sha256 "db6ec38aced981628c1d0ba001a5405826236374c591c66f74d58baaa4e42dc8" => :sierra
   end
 
