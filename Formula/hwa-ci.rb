@@ -6,7 +6,7 @@ class HwaCi < Formula
   desc "CI configuration tool"
   homepage "https://github.com/haskell-works/hwa-ci"
   url "https://github.com/haskell-works/hwa-ci/archive/v0.1.0.1.tar.gz"
-  sha256 "f9ac84bcdcdad559e44b7fd301bb4437136c2be23f304cd9742b93e623659af6"
+  sha256 "70d9b28c073d59f3574da2cb0735d3556ec7605def38b3486dbc5981771781a0"
   head "https://github.com/haskell-works/hwa-ci"
 
   depends_on "ghc" => :build
