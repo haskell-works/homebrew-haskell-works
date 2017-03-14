@@ -16,6 +16,10 @@ class HwaCi < Formula
     install_cabal_package
   end
 
+  bottle do
+    sha256 "db6ec38aced981628c1d0ba001a5405826236374c591c66f74d58baaa4e42dc8" => :sierra
+  end
+
   test do
     assert_match "hwa-ci 0.1.0.0", pipe_output("#{bin}/hwa-ci version", "", 0)
   end
