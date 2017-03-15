@@ -14,6 +14,9 @@ class HwaCi < Formula
 
   def install
     install_cabal_package
+
+    # Build bash completion
+    (bash_completion/"hwa-ci").write `#{bin}/hwa-ci --bash-completion-script hwa-ci`
   end
 
   bottle do
