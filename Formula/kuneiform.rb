@@ -19,6 +19,12 @@ class Kuneiform < Formula
     (bash_completion/"kuneiform").write `#{bin}/kuneiform --bash-completion-script kuneiform`
   end
 
+  bottle do
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/kuneiform-0.1.0.0"
+    cellar :any_skip_relocation
+    sha256 "d2d01f7f1e265ad50ea7cae6296089a52b22e0d866063b0379de49abec500118" => :high_sierra
+  end
+
   test do
     assert_match "kuneiform 0.1.0.0", pipe_output("#{bin}/kuneiform version", "", 0)
   end
