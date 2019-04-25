@@ -6,7 +6,7 @@ class CabalCache < Formula
   desc "CI configuration tool"
   homepage "https://github.com/haskell-works/cabal-cache"
   url "https://github.com/haskell-works/cabal-cache/archive/v0.2.0.2.tar.gz"
-  sha256 "70d9b28c073d59f3574da2cb0735d3556ec7605def38b3486dbc5981771781a0"
+  sha256 "e7706709e90b6f184fa9ceee2b8a8643b145c15f3c1bde9ad2a1362d57797918"
   head "https://github.com/haskell-works/cabal-cache"
 
   depends_on "ghc" => :build
@@ -19,11 +19,11 @@ class CabalCache < Formula
     (bash_completion/"cabal-cache").write `#{bin}/cabal-cache --bash-completion`
   end
 
-  bottle do
-    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-0.2.0.2"
-    cellar :any_skip_relocation
-    sha256 "b611873018d0cd9c291cc7660391d699c01037fa5d9068ae166e8a7606595568" => :sierra
-  end
+  # bottle do
+  #   root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-0.2.0.2"
+  #   cellar :any_skip_relocation
+  #   sha256 "b611873018d0cd9c291cc7660391d699c01037fa5d9068ae166e8a7606595568" => :sierra
+  # end
 
   test do
     assert_match "cabal-cache 0.2.0.2", pipe_output("#{bin}/cabal-cache version", "", 0)
