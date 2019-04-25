@@ -19,11 +19,12 @@ class CabalCache < Formula
     (bash_completion/"cabal-cache").write `#{bin}/cabal-cache --bash-completion`
   end
 
-  # bottle do
-  #   root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-0.2.0.2"
-  #   cellar :any_skip_relocation
-  #   sha256 "b611873018d0cd9c291cc7660391d699c01037fa5d9068ae166e8a7606595568" => :sierra
-  # end
+  bottle do
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-0.2.0.2"
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "93e60f6adb2b981d0a1e148f6a7793438ce3e2cafb57f2a77abf142233e3965a" => :mojave
+  end
 
   test do
     assert_match "cabal-cache 0.2.0.2", pipe_output("#{bin}/cabal-cache version", "", 0)
