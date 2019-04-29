@@ -26,6 +26,13 @@ class CabalCache < Formula
     sha256 "2962040c149cdbec23e492245951cdb6c3d5c113aa5a648ec5f502901f32e328" => :mojave
   end
 
+  bottle do
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.0.0"
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "2962040c149cdbec23e492245951cdb6c3d5c113aa5a648ec5f502901f32e328" => :high_sierra
+  end
+
   test do
     assert_match "cabal-cache 0.2.0.2", pipe_output("#{bin}/cabal-cache version", "", 0)
   end
