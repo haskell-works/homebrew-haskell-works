@@ -5,8 +5,8 @@ class CabalCache < Formula
 
   desc "CI configuration tool"
   homepage "https://github.com/haskell-works/cabal-cache"
-  url "https://github.com/haskell-works/cabal-cache/archive/v1.0.0.11.tar.gz"
-  sha256 "b5dd02bc5f05c8b7afc955dbe33fd75c2ddda187603a8c19ae92fdbec6a398c5"
+  url "https://github.com/haskell-works/cabal-cache/archive/v1.0.0.12.tar.gz"
+  sha256 "6a8bb1347a67e274e2b1f3eea8171197e0cffccd3c12a17ecdda308edae77c32"
   head "https://github.com/haskell-works/cabal-cache"
 
   depends_on "ghc" => :build
@@ -20,10 +20,10 @@ class CabalCache < Formula
   end
 
   bottle do
-    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.0.11"
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.0.12"
     cellar :any_skip_relocation
     rebuild 1
-    sha256 "50ef881bb16affb94f6289d8d7bd3da0cbdc47e6b791bb8ec4f6d7a5817a69a7" => :mojave
+    sha256 "384c306f4a47b7ae7db03c6dddb036bdb069c4d4e78d540d821c018b642069dc" => :mojave
   end
 
   # bottle do
