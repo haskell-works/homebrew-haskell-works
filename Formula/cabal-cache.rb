@@ -8,6 +8,7 @@ class CabalCache < Formula
 
   bottle do
     rebuild 1
+    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.5.1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d1bfa48161297265cb4338a1bbb1c241192c06b2bc5cae3166faf55b7cf02cd1"
   end
 
