@@ -10,7 +10,7 @@ class CabalCache < Formula
     # sha256 cellar: :any_skip_relocation, ventura:        "66e5d594e32b86480288e83ae9589c754e9796a6148b8b4992c1bb405688c7ef"
   end
 
-  depends_on "cabal-install@3.8.1.0" => :build
+  depends_on "cabal-install" => :build
   depends_on "ghc@8.10.7" => :build
 
   def install
