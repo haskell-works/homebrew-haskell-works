@@ -7,7 +7,8 @@ class CabalCache < Formula
   head "https://github.com/haskell-works/cabal-cache.git", branch: "main"
 
   bottle do
-    # sha256 cellar: :any_skip_relocation, ventura:        "66e5d594e32b86480288e83ae9589c754e9796a6148b8b4992c1bb405688c7ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1bfa48161297265cb4338a1bbb1c241192c06b2bc5cae3166faf55b7cf02cd1"
   end
 
   depends_on "cabal-install" => :build
