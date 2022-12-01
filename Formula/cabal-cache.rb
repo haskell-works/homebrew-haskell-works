@@ -1,39 +1,25 @@
-require "language/haskell"
-
 class CabalCache < Formula
-  include Language::Haskell::Cabal
-
-  desc "CI configuration tool"
+  desc "Haskell cabal store caching tool"
   homepage "https://github.com/haskell-works/cabal-cache"
   url "https://github.com/haskell-works/cabal-cache/archive/v1.0.5.1.tar.gz"
-  sha256 "6a8bb1347a67e274e2b1f3eea8171197e0cffccd3c12a17ecdda308edae77c32"
-  head "https://github.com/haskell-works/cabal-cache"
-
-  depends_on "ghc" => :build
-  depends_on "cabal-install" => :build
-
-  def install
-    install_cabal_package
-
-    # Build bash completion
-    (bash_completion/"cabal-cache").write `#{bin}/cabal-cache --bash-completion`
-  end
+  sha256 "912c7d08d9296a49a75ff25cf03b35b741e7c2198293d553b732d6d1dd29baaf"
+  license "BSD-3-Clause"
+  head "https://github.com/haskell-works/cabal-cache.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.5.1"
-    cellar :any_skip_relocation
-    rebuild 1
-    sha256 "384c306f4a47b7ae7db03c6dddb036bdb069c4d4e78d540d821c018b642069dc" => :mojave
+    # sha256 cellar: :any_skip_relocation, ventura:        "66e5d594e32b86480288e83ae9589c754e9796a6148b8b4992c1bb405688c7ef"
   end
 
-  # bottle do
-  #   root_url "https://github.com/haskell-works/homebrew-haskell-works/releases/download/cabal-cache-1.0.0.1"
-  #   cellar :any_skip_relocation
-  #   rebuild 1
-  #   sha256 "0ee131962af50b97bc90cb51500de18bf0769416c56c112948f9effd8d15911a" => :high_sierra
-  # end
+  depends_on "cabal-install" => :build
+  depends_on "ghc" => :build
 
-  test do
-    assert_match "cabal-cache 0.2.0.2", pipe_output("#{bin}/cabal-cache version", "", 0)
+  def install
+    system "cabal", "v2-update"
+    # Work around build failure by enabling `ghc-lib` flag
+    # lib/Language/Haskell/Stylish/GHC.hs:71:32: error:
+    #     • Couldn't match expected type 'GHC.Settings'
+    #                   with actual type 'ghc-lib-parser-9.2.4.20220729:GHC.Settings.Settings'
+    # Issue ref: https://github.com/haskell/stylish-haskell/issues/405
+    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+ghc-lib"
   end
 end
